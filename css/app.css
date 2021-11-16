@@ -1,0 +1,16 @@
+a {
+    color: white !important;
+    font-size: 1.2rem;
+}
+.navbar{
+    color: white;
+    background: linear-gradient(#64a1e6, #04093f 90%);
+}
+body{
+    background-color: whitesmoke;
+}
+#contenido{
+    margin-top: 2%;    
+    color: white;
+    background: linear-gradient(#64a1e6, #04093f);
+}
