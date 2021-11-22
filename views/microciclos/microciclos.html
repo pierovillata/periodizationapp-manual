@@ -1,7 +1,5 @@
 <style>
-    div {
-        font-size:12px;
-    }
+
 </style>
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 row">
     <div class="card-info col-xs-12 col-sm-12 col-md-4 col-lg-4">
@@ -23,32 +21,111 @@
     </div>
 </div>
 <script>
-    $(function( ){
-        var i;
-        var filaDia=``;
-    
-        var dias = ["LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES", "SABADO", "DOMINGO"];
+    function getEntrenos(){
+        var entrenos =[
+            {
+                
+                "deporte":"Natación",
+                "distancia":"800",
+                "vol":"m",
+                "zonas":"1,2,3",
+                "descripcion":"4x100 crol + 8x50 tecnicos"
 
-        for (i = 0; i < 7; i++) {
-            var j = 1;
-            j = j + i;
-            filaDia += `<div class="entreno ui-widget-content col-xs-12 col-sm-12 col-md-6 col-lg-6 card-info">
-                            <div class="card-header">` + dias[i] + `</div> 
-                            <div class="card-body">                    
-                                <div class="form-group">
-                                   <input id="diaDescrip`+ i + `" type="text"/>
-                                </div>
-                            </div>
-                        </div>`;
-        }
-        
-        $("#panelMicro").append(filaDia);
+            },
+            {
+              
+                "deporte":"Ciclismo",
+                "distancia":"40",
+                "vol":"km",
+                "zonas":"1,2",
+                "descripcion":"40km suaves"
 
-    });
+            },
+            {
+              
+                "deporte":"Natacion",
+                "distancia":"2000",
+                "vol":"m",
+                "zonas":"1,2",
+                "descripcion":"20x100 crol "
 
-    $(".entreno").draggable({
+            },
+            {
+              
+              "deporte":"Natacion",
+              "distancia":"2000",
+              "vol":"m",
+              "zonas":"1,2",
+              "descripcion":"20x100 crol "
+
+          },
+          {
+              
+              "deporte":"Natacion",
+              "distancia":"2000",
+              "vol":"m",
+              "zonas":"1,2",
+              "descripcion":"20x100 crol "
+
+          },
+          {
+              
+              "deporte":"Natacion",
+              "distancia":"2000",
+              "vol":"m",
+              "zonas":"1,2",
+              "descripcion":"20x100 crol "
+
+          },
+          {
+              
+              "deporte":"Natacion",
+              "distancia":"2000",
+              "vol":"m",
+              "zonas":"1,2",
+              "descripcion":"20x100 crol "
+
+          },
+          {
+              
+              "deporte":"Natacion",
+              "distancia":"2000",
+              "vol":"m",
+              "zonas":"1,2",
+              "descripcion":"20x100 crol "
+
+          },
+        ];
+        return entrenos;
        
+    }
+    $(function( ){
+        var entrenamientos =getEntrenos();
+       
+        
+        var filaDia=``;  
+        entrenamientos.forEach((item,index) => {
+           
+            filaDia += `<div id="entreno`+index+`" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 card-default">
+                            <div class="card-header">                                
+                                  Deporte: `+item.deporte+` Distancia: `+item.distancia+` `+item.vol+` Zonas: ` +item.zonas+`                                
+                            </div> 
+                            <div class="card-body infoentreno">                    
+                               <p>`+item.descripcion+`</p>
+                             </div>
+                        </div><br>`;
+           
+        }); 
+        $("#panelMicro").append(filaDia);
+          
+           
+        
+        
+   
+
     });
+
+    $("#entreno0").draggable();
     $("#microcicloDiv").droppable({
             drop: function( event, ui ) {
             $( this )

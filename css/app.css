@@ -9,9 +9,39 @@ a {
 body{
     background-color: whitesmoke;
     font-size: 12px;
+    color:black;
 }
 #contenido{
     margin-top: 2%;    
-    color: white;
-    background: linear-gradient(#64a1e6, #04093f);
+    color: black;
+    background:rgb(245, 242, 242);
+    /*background: linear-gradient(#64a1e6, #04093f);*/
+    height: 500px !important;
+}
+
+div {
+    font-size:12px;
+}
+#panelMicro {
+    overflow-y: scroll;
+    max-height: 400px;
+}
+.card {
+    margin-top: 5px;
+    
+}
+.card,.card-header, .card-body {
+    border-radius: 5px !important;
+    
+}
+.card-header {
+    background: linear-gradient(#64a1e6, #04093f 90%);
+}
+.infoentreno {
+    background-color: #ffff;
+    color:black;
+
+}
+.entreno {
+    margin-top:5px
 }
