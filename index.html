@@ -20,7 +20,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 
-        <link rel="stylesheet" href="css/app.css">
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
 </head>
 
 
@@ -38,6 +40,7 @@
                     <a id="deportes" class="nav-link " aria-current="page" href="#">Deportes</a>
                     <a id="atletas" class="nav-link " aria-current="page" href="#">Atletas</a>
                     <a id="entrenadores" class="nav-link " aria-current="page" href="#">Entrenadores</a>
+                    <a id="microciclos" class="nav-link " aria-current="page" href="#">Microciclos</a>
                     <a id="login" class="nav-link " aria-current="page" href="#">Login</a>
 
                 </div>
@@ -45,7 +48,7 @@
         </div>
     </nav>
 
-    <div id="contenido" class="container col-12">
+    <div id="contenido" class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
     </div>
 
@@ -68,6 +71,10 @@
     $("#login").click(function () {
         $("#contenido").empty();
         $("#contenido").load("views/login/login.html");
+    })
+    $("#microciclos").click(function () {
+        $("#contenido").empty();
+        $("#contenido").load("views/microciclos/microciclos.html");
     })
 
 </script>

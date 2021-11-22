@@ -1,0 +1,60 @@
+<style>
+    div {
+        font-size:12px;
+    }
+</style>
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 row">
+    <div class="card-info col-xs-12 col-sm-12 col-md-4 col-lg-4">
+        <div class="card-header">
+            <b>Listado de entrenos</b>
+        </div>     
+        <div  id="panelMicro" class="card-body col-xs-12 col-sm-12 col-md-12 col-lg-12 row">
+
+        </div>
+
+    </div>
+    <div class="card-info col-xs-12 col-sm-12 col-md-8 col-lg-8">
+        <div class="card-header">
+            <b>Microciclo</b>
+        </div>
+        <div id="microcicloDiv" class="card-body ui-widget-header">
+            <p></p>
+        </div>
+    </div>
+</div>
+<script>
+    $(function( ){
+        var i;
+        var filaDia=``;
+    
+        var dias = ["LUNES", "MARTES", "MIERCOLES", "JUEVES", "VIERNES", "SABADO", "DOMINGO"];
+
+        for (i = 0; i < 7; i++) {
+            var j = 1;
+            j = j + i;
+            filaDia += `<div class="entreno ui-widget-content col-xs-12 col-sm-12 col-md-6 col-lg-6 card-info">
+                            <div class="card-header">` + dias[i] + `</div> 
+                            <div class="card-body">                    
+                                <div class="form-group">
+                                   <input id="diaDescrip`+ i + `" type="text"/>
+                                </div>
+                            </div>
+                        </div>`;
+        }
+        
+        $("#panelMicro").append(filaDia);
+
+    });
+
+    $(".entreno").draggable({
+       
+    });
+    $("#microcicloDiv").droppable({
+            drop: function( event, ui ) {
+            $( this )
+            .addClass( "ui-state-highlight" )
+            .find( "p" )
+                .html( "Copiado!" );
+        }
+    });
+</script>
